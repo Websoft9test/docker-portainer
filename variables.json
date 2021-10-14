@@ -17,7 +17,7 @@
   "services":[
     {
       "name": "portainer",
-      "port": "9001",
+      "port": "9091",
       "description_cn": "浏览器访问 Portainer",
       "description_en": "Visit Portainer through browser",
       "required": "Y"
