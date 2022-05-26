@@ -1,16 +1,21 @@
+# image: https://hub.docker.com/r/portainer/portainer
+
 version: '3.8'
 
 services:
   portainer:
-    container_name: ${APP_CONTAINER_NAME}
     image: portainer/portainer-${APP_DISTRIBUTION}:${APP_VERSION}
+    container_name: ${APP_NAME}
     restart: always
     ports:
       - ${APP_PORT}:9000
     volumes:
-      - ${VOLUMES_PATH_PREFIX}/portainer_data:/data
+      - portainer:/data
       - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
   default:
-      name: ${APP_NETWORK}
+      name: ${APP_NAME}
+
+volumes:
+  portainer:
